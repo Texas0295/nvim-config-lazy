@@ -17,9 +17,9 @@ return {
 
         -- keymap setup
         local keymap = vim.keymap
-        keymap.set("n", "<leader>h", "<cmd>BufferLineCyclePrev<CR>", {desc = "Go to previous buffer"})
         keymap.set("n", "<TAB>", "<cmd>BufferLineCycleNext<CR>", {desc = "Cycle buffers"})
-        keymap.set("n", "<leader>l", "<cmd>BufferLineCycleNext<CR>", {desc = "Go to next buffer"})
+        keymap.set("n", "<leader>h", "<cmd>BufferLineCloseLeft<CR>", {desc = "Close left buffer"})
+        keymap.set("n", "<leader>l", "<cmd>BufferLineCloseRight<CR>", {desc = "Close reignt buffer"})
         keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>",{desc = "Go to specific buffer"})
         keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>",{desc = "Go to specific buffer"})
         keymap.set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>",{desc = "Go to specific buffer"})
