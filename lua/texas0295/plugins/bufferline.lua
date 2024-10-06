@@ -10,7 +10,7 @@ return {
                 indicator_icon = '▎',
                 buffer_close_icon = '×',
                 modified_icon = '+',
-                offsets = {{ filetype = "NvimTree", text = "File Explorer", text_align = "center", separator = true }},
+                offsets = {{ filetype = "NvimTree", text = "エクスプローラー", text_align = "center", separator = true }},
                 color_icons = true,
             },
         })
