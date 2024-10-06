@@ -8,17 +8,7 @@ return {
             executable = {
             command = 'E:\\DevEnv\\codelldb-win32-x64\\extension\\adapter\\codelldb.exe',
             args = {"--port", "${port}"},
-
             detached = false,
-            }
-        }
-
-        dap.adapters.cppdbg = {
-            id = "cppdbg",
-            type = "executable",
-            command = "E:\\DevEnv\\cpptools-windows-x64\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe",
-            options = {
-                detached = false
             }
         }
 
@@ -39,6 +29,7 @@ return {
         -- keymap
         local keymap = vim.keymap
         keymap.set("n","<leader>b","<cmd>DapToggleBreakpoint<CR>",{desc="Toggle breakpoint"})
+        keymap.set("n","'t","<cmd>DapTerminate<CR>",{desc="Stop debugging"})
         keymap.set("n","<F2>","<cmd>DapContinue<CR>",{desc="Start debugging"})
         keymap.set("n","<F7>","<cmd>DapStepOver<CR>",{desc="Step over"})
         keymap.set("n","<F8>","<cmd>DapStepInto<CR>",{desc="Step into"})
