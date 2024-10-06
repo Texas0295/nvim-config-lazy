@@ -2,5 +2,4 @@
 
 ## TO-DO List
 
-- DAP
 - UI
