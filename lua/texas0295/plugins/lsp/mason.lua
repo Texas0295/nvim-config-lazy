@@ -35,10 +35,6 @@ return {
                 "emmet_ls",
                 "prismals",
                 "pyright",
-                "rust-analyzer",
-                "css-lsp",
-                "codelldb",
-                "marksman",
             },
             automatic_installation = true,
          })
