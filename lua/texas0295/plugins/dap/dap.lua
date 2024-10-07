@@ -2,6 +2,7 @@ return {
     "mfussenegger/nvim-dap",
     config = function()
         local dap = require("dap")
+        dap.set_log_level('DEBUG')
         dap.adapters.codelldb = {
             type = 'server',
             port = "${port}",
@@ -9,6 +10,15 @@ return {
             command = 'E:\\DevEnv\\codelldb-win32-x64\\extension\\adapter\\codelldb.exe',
             args = {"--port", "${port}"},
             detached = false,
+            }
+        }
+
+        dap.adapters.cppdbg = {
+            id = 'cppdbg',
+            type = 'executable',
+            command = 'E:\\developTools\\cpptools-windows-x64\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe',
+            options = {
+                detached = false
             }
         }
 
