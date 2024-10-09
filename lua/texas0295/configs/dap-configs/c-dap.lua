@@ -3,7 +3,7 @@ local dap = require("dap")
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = 'E:\\developTools\\cpptools-windows-x64\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe',
+  command = 'D:\\developTools\\cpptools-windows-x64\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe',
   options = {
     detached = false
   }
