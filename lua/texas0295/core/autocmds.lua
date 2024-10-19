@@ -9,6 +9,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- when vim is opened
 vim.api.nvim_create_autocmd("VimEnter",{
     callback = function()
-        require("nvim-tree.api").tree.open()
+        local args = vim.fn.argv();
+        if #args == 0 then
+            require("nvim-tree.api").tree.open()
+        elseif args[1] ~= "leetcode.nvim" then
+            -- nothing to do
+        end
     end,
 })
