@@ -15,6 +15,7 @@ return {
                 dotfiles = true,
             },
         })
+        vim.keymap.set("n","<leader>e","<cmd>NvimTreeToggle<cr>",{desc = "Toogle Nvim Tree"})
     end,
 }
 
