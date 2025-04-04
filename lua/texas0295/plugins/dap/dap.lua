@@ -7,7 +7,7 @@ return {
             type = 'server',
             port = "${port}",
             executable = {
-            command = 'D:\\DevEnv\\codelldb-win32-x64\\extension\\adapter\\codelldb.exe',
+            command = 'codelldb',
             args = {"--port", "${port}"},
             detached = false,
             }
@@ -16,7 +16,7 @@ return {
         dap.adapters.cppdbg = {
             id = 'cppdbg',
             type = 'executable',
-            command = 'D:\\developTools\\cpptools-windows-x64\\extension\\debugAdapters\\bin\\OpenDebugAD7.exe',
+            command = 'OpenDebugAD7',
             options = {
                 detached = false
             }

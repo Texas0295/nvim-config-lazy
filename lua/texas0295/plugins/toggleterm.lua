@@ -5,7 +5,7 @@ return{
             size = 8,
             open_mapping = [[<c-t>]],
             direction = "horizontal",
-            shell = "pwsh",
+            shell = "fish",
             dir = vim.fn.expand("%:p:h"),
         })
     end,

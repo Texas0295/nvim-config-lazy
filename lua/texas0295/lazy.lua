@@ -13,10 +13,10 @@ require('lazy').setup({
     {
         import = "texas0295.plugins"
     },
---    {
---        import = "texas0295.plugins.lsp"
---    },
---    {
---        import = "texas0295.plugins.dap"
---    }
+    {
+        import = "texas0295.plugins.lsp"
+    },
+    {
+        import = "texas0295.plugins.dap"
+    }
 })

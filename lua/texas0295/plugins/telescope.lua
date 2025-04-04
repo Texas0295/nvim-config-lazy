@@ -24,6 +24,7 @@ return{
             }
         })
         telescope.load_extension("fzf");
+        telescope.load_extension("notify");
 
         -- keymaps
         local keymap = vim.keymap
