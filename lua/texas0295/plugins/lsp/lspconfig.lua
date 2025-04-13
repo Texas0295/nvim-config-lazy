@@ -15,6 +15,16 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
+    lspconfig.clangd.setup({
+        cmd = {
+            "clangd",
+            "--query-driver=/usr/bin/arm-none-eabi-g*",
+            "--compile-commands-dir=build",
+            "--header-insertion=never", -- Optional: Prevent auto-adding headers
+        },
+        filetypes = { "c", "cpp" },
+        root_dir = lspconfig.util.root_pattern("CMakeLists.txt", ".git", "build"),
+    })
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)

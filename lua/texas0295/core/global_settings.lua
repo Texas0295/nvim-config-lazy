@@ -21,4 +21,11 @@ vim.g.rustaceanvim = {
 	return { ra_binary }
       end,
     },
-  }
+}
+
+-- ASM support
+vim.filetype.add({
+    extension = {
+        asm = "asm",
+    },
+})
