@@ -1,0 +1,7 @@
+vim.api.nvim_create_user_command("AssembleAndRun", function()
+    local dir = vim.fn.expand("%:p:h")
+    local asm_file = vim.fn.expand("%:t")
+    local com_file = asm_file:gsub("%.asm$", ".com")
+    vim.cmd("!nasm -f bin -o " .. com_file .. " %")
+    vim.cmd("terminal dosbox -c \"mount c " .. dir .. "\" -c \"c:\" -c \"" .. com_file .. "\"")
+end, {})
