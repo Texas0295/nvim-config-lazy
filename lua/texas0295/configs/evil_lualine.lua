@@ -136,16 +136,27 @@ ins_left { 'location' }
 
 ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
-ins_left {
-  'diagnostics',
-  sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
-  diagnostics_color = {
-    error = { fg = colors.red },
-    warn = { fg = colors.yellow },
-    info = { fg = colors.cyan },
-  },
-}
+local function should_disable_diagnostics_display()
+  local config = vim.diagnostic.config()
+  return config.virtual_text == false
+    and config.signs == false
+    and config.underline == false
+    and config.update_in_insert == false
+    and config.severity_sort == false
+end
+
+if not should_disable_diagnostics_display() then
+  ins_left {
+    'diagnostics',
+    sources = { 'nvim_diagnostic' },
+    symbols = { error = ' ', warn = ' ', info = ' ' },
+    diagnostics_color = {
+      error = { fg = colors.red },
+      warn = { fg = colors.yellow },
+      info = { fg = colors.cyan },
+    },
+  }
+end
 
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
@@ -156,7 +167,6 @@ ins_left {
 }
 
 ins_left {
-  -- Lsp server name .
   function()
     local msg = 'Lsp is unavailable'
     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -172,7 +182,7 @@ ins_left {
     end
     return msg
   end,
-  icon = ' LSP:',
+  icon = (should_disable_diagnostics_display() and '󰹐 LSP:' or ' LSP:'),
   color = { fg = '#ffffff', gui = 'bold' },
 }
 
